@@ -3,11 +3,15 @@ declare(strict_types=1);
 require __DIR__ . '/config.php';
 session_start();
 
+header('Content-Type: application/json; charset=utf-8');
 header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
+header('Access-Control-Allow-Headers: Content-Type, Accept');
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') exit;
 $path = $_GET['resource'] ?? '';
 $method = $_SERVER['REQUEST_METHOD'];
-$body = json_decode(file_get_contents('php://input'), true) ?? [];
+$rawBody = file_get_contents('php://input');
+$body = $rawBody === '' ? [] : json_decode($rawBody, true);
+if ($rawBody !== '' && !is_array($body)) json_response(['error' => 'Corpo da requisição inválido.'], 400);
 
 try {
     $pdo = db();
