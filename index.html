@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Loja oficial Regional Jaú e CMD XLVII" />
+    <title>Regional Jaú | Loja Oficial</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="topbar"><span>Envios para todo o Brasil</span><span>•</span><span>Loja oficial Regional Jaú & CMD XLVII</span></div>
+    <header class="header">
+      <a class="brand" href="#inicio" aria-label="Loja Regional Jaú">
+        <img src="img/logo_reg_jau.jpeg" alt="Brasão Regional Jaú" />
+        <span><strong>REGIONAL</strong><em>JAÚ</em></span>
+      </a>
+      <nav class="navigation" aria-label="Menu principal">
+        <a href="#produtos">Produtos</a><a href="#categorias">Categorias</a><a href="#sobre">O grupo</a><button class="admin-link" id="adminOpen">Área administrativa</button>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-button" id="searchOpen" aria-label="Buscar produtos">⌕</button>
+        <button class="login-button" id="loginOpen">Entrar</button>
+        <button class="cart-button" id="cartOpen" aria-label="Abrir carrinho">Sacola <b id="cartCount">0</b></button>
+      </div>
+    </header>
+
+    <main id="inicio">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">LOJA OFICIAL</p>
+          <h1>Vestindo a<br /><i>nossa irmandade.</i></h1>
+          <p class="hero-text">Produtos oficiais para quem carrega a Regional Jaú e o CMD XLVII no coração.</p>
+          <a class="primary-button" href="#produtos">Conheça a coleção <span>→</span></a>
+        </div>
+        <div class="hero-art">
+          <div class="red-disc"></div><div class="hero-line"></div>
+          <img class="crest main-crest" src="img/logo_reg_jau.jpeg" alt="Brasão da Regional Jaú" />
+          <img class="crest secondary-crest" src="img/logo_cmd_XLVII.jpeg" alt="Brasão CMD XLVII" />
+          <p class="hero-mark">DESDE<br /><b>2010</b></p>
+        </div>
+      </section>
+
+      <section class="benefits" aria-label="Diferenciais">
+        <div><span>◈</span><p><b>Produto oficial</b>Qualidade que representa</p></div>
+        <div><span>◎</span><p><b>Compra segura</b>Seus dados protegidos</p></div>
+        <div><span>↗</span><p><b>Envio nacional</b>Para todo o Brasil</p></div>
+        <div><span>▰</span><p><b>Atendimento direto</b>Fale pelo WhatsApp</p></div>
+      </section>
+
+      <section class="section categories" id="categorias">
+        <div class="section-heading"><div><p class="eyebrow">ENCONTRE O SEU</p><h2>Categorias</h2></div><a href="#produtos">Ver todos <span>→</span></a></div>
+        <div class="category-grid">
+          <button class="category-card active" data-category="Todos"><span>01</span><b>Todos os produtos</b><i>→</i></button>
+          <button class="category-card" data-category="Bonés"><span>02</span><b>Bonés</b><i>→</i></button>
+          <button class="category-card" data-category="Camisetas"><span>03</span><b>Camisetas</b><i>→</i></button>
+          <button class="category-card" data-category="Vestuário"><span>04</span><b>Vestuário</b><i>→</i></button>
+          <button class="category-card" data-category="Acessórios"><span>05</span><b>Acessórios</b><i>→</i></button>
+          <button class="category-card" data-category="Equipamentos"><span>06</span><b>Equipamentos</b><i>→</i></button>
+        </div>
+      </section>
+
+      <section class="section products" id="produtos">
+        <div class="section-heading"><div><p class="eyebrow">COLEÇÃO REGIONAL JAÚ</p><h2>Destaques da loja</h2></div><div class="product-tools"><button id="filterStock">Disponíveis</button><button id="searchProducts">Buscar ⌕</button></div></div>
+        <div class="product-grid" id="productGrid"></div>
+      </section>
+
+      <section class="banner" id="sobre">
+        <img src="img/logo_todos_serao.jpeg" alt="Símbolo Insanos" />
+        <div><p class="eyebrow">FAÇA PARTE DESSA HISTÓRIA</p><h2>Mais que um clube.<br /><i>Uma família.</i></h2><p>Leve a força, a união e o respeito do Insanos MC com você.</p><a href="#produtos">Ver produtos oficiais →</a></div>
+      </section>
+    </main>
+
+    <footer><div class="footer-brand"><img src="img/logo_reg_jau.jpeg" alt="Regional Jaú" /><span>REGIONAL<br /><b>JAÚ</b></span></div><p>© 2025 Regional Jaú. Todos os direitos reservados.</p><div class="socials"><a href="#">Instagram</a><a href="#">WhatsApp</a></div></footer>
+    <button class="whatsapp" aria-label="Fale conosco pelo WhatsApp">☏<span>Faça sua encomenda</span></button>
+
+    <div class="overlay" id="overlay"></div>
+    <aside class="cart-panel panel" id="cartPanel"><div class="panel-head"><h2>Sua sacola</h2><button class="close">×</button></div><div id="cartItems" class="cart-items"></div><div class="cart-footer"><div><span>Subtotal</span><b id="cartTotal">R$ 0,00</b></div><button class="primary-button" id="checkout">Finalizar pedido <span>→</span></button></div></aside>
+    <dialog id="productModal" class="product-modal"><button class="close">×</button><div id="modalContent"></div></dialog>
+    <dialog id="loginModal" class="login-modal"><button class="close">×</button><p class="eyebrow">ACESSO DO CLIENTE</p><h2>Bem-vindo de volta</h2><form id="loginForm"><label>Usuário ou e-mail<input name="login" required placeholder="bode ou seu@email.com" /></label><label>Senha<input name="password" type="password" required placeholder="••••••••" /></label><p class="login-error" id="loginError" role="alert"></p><button class="primary-button" type="submit">Entrar <span>→</span></button></form><p class="small">Ainda não possui cadastro? <a href="#">Criar minha conta</a></p></dialog>
+    <dialog id="checkoutModal" class="checkout-modal"><button class="close">×</button><div class="checkout-head"><p class="eyebrow">FINALIZAR PEDIDO</p><h2>Seus dados</h2><p>Preencha os dados para calcular a entrega e concluir sua encomenda.</p></div><form id="checkoutForm"><div class="checkout-grid"><label>Nome completo<input name="name" required placeholder="Como consta no cadastro" /></label><label>WhatsApp<input name="phone" required placeholder="(14) 99999-9999" /></label><label class="full">E-mail<input type="email" name="email" required placeholder="seu@email.com" /></label><label>CEP<input name="cep" required placeholder="00000-000" /></label><button type="button" class="freight-button" id="calculateFreight">Calcular frete</button><label class="full">Endereço<input name="address" required placeholder="Rua, número e complemento" /></label></div><fieldset><legend>Forma de pagamento</legend><label class="radio"><input type="radio" name="payment" value="PIX" checked /> PIX <span>5% de desconto</span></label><label class="radio"><input type="radio" name="payment" value="Cartão de crédito" /> Cartão de crédito</label><label class="radio"><input type="radio" name="payment" value="Cartão de débito" /> Cartão de débito</label></fieldset><label class="consent"><input type="checkbox" name="notifications" /> Desejo receber novidades e lançamentos por WhatsApp e e-mail.</label><div class="checkout-total"><span>Subtotal <b id="checkoutSubtotal">R$ 0,00</b></span><span>Frete <b id="checkoutFreight">A calcular</b></span><strong>Total <b id="checkoutTotal">R$ 0,00</b></strong></div><button class="primary-button" type="submit">Confirmar encomenda <span>→</span></button></form></dialog>
+    <dialog id="successModal" class="success-modal"><span class="success-icon">✓</span><p class="eyebrow">PEDIDO RECEBIDO</p><h2>Encomenda confirmada!</h2><p id="successText"></p><button class="primary-button" id="successClose">Continuar comprando <span>→</span></button></dialog>
+    <dialog id="adminModal" class="admin-modal"><button class="close">×</button><div class="admin-top"><div><p class="eyebrow">VISÃO GERAL</p><h2>Painel administrativo</h2></div><span>Atualizado agora</span></div><div class="stats"><div><span>Vendas hoje</span><b>R$ 1.284<small>,00</small></b><em>↑ 12,5%</em></div><div><span>Pedidos pendentes</span><b>08</b><em class="neutral">Aguardando ação</em></div><div><span>Estoque baixo</span><b>05</b><em class="alert">Requer atenção</em></div><div><span>Clientes ativos</span><b>248</b><em>↑ 8 este mês</em></div></div><div class="admin-bottom"><section><h3>Últimos pedidos</h3><div class="order"><b>#RJ-1048</b><span>Camiseta Oficial · PIX</span><strong>Pago</strong></div><div class="order"><b>#RJ-1047</b><span>Boné Insanos · Cartão</span><strong>Separando</strong></div><div class="order"><b>#RJ-1046</b><span>Bandana Lokas · PIX</span><strong>Enviado</strong></div></section><section><h3>Ações rápidas</h3><button>+ Cadastrar produto</button><button>▣ Gerenciar estoque</button><button>▤ Ver relatórios</button></section></div></dialog>
+    <div class="search-bar" id="searchBar"><input id="searchInput" type="search" placeholder="O que você está procurando?" /><button class="close">×</button></div>
+    <script src="app.js"></script>
+  </body>
+</html>
